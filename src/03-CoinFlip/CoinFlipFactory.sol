@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.21;
 
-import "../core/Level.sol";
-import "./CoinFlip.sol";
+import {Level} from "../core/Level.sol";
+import {CoinFlip} from "./CoinFlip.sol";
 
 contract CoinFlipFactory is Level {
     function createInstance(address _player) public payable override returns (address) {
