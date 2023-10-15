@@ -13,7 +13,7 @@ contract VaultTest is Test {
         ethernaut = new Ethernaut();
     }
 
-    function test_ForceAttack() public {
+    function test_VaultAttack() public {
         // SETUP
         VaultFactory vaultFactory = new VaultFactory();
         ethernaut.registerLevel(vaultFactory);
