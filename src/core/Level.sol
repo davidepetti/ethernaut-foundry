@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
-
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.21;
 
 abstract contract Level {
     function createInstance(address _player) public payable virtual returns (address);
