@@ -8,6 +8,8 @@ interface IReentrance {
     function withdraw(uint256 _amount) external;
 }
 
+// For some cause I have to investigate I couldn't find a solution using only constructor and receive
+// It wasn't working
 contract ReentranceAttack {
     IReentrance public target;
     uint256 public deposit;
