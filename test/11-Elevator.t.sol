@@ -13,7 +13,7 @@ contract ElevatorTest is Test {
         ethernaut = new Ethernaut();
     }
 
-    function test_ReentranceAttack() public {
+    function test_ElevatorAttack() public {
         // SETUP
         ElevatorFactory elevatorFactory = new ElevatorFactory();
         ethernaut.registerLevel(elevatorFactory);
