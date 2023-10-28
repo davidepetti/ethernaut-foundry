@@ -2,7 +2,7 @@
 pragma solidity ^0.8.21;
 
 import {Level} from "../core/Level.sol";
-import "./GatekeeperOne.sol";
+import {GatekeeperOne} from "./GatekeeperOne.sol";
 
 contract GatekeeperOneFactory is Level {
     function createInstance(address _player) public payable override returns (address) {
