@@ -13,7 +13,7 @@ contract GatekeeperOneTest is Test {
         ethernaut = new Ethernaut();
     }
 
-    function test_PrivacyAttack() public {
+    function test_GatekeeperOneAttack() public {
         // SETUP
         GatekeeperOneFactory gatekeeperOneFactory = new GatekeeperOneFactory();
         ethernaut.registerLevel(gatekeeperOneFactory);
